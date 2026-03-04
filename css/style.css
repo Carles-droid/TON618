@@ -1,0 +1,142 @@
+/* ── Variables ──────────────────────────────────────────────── */
+:root {
+  --colorPrimario:   #0A0A0A;
+  --colorSecundario: #D2C2C2;
+  --colorAcento:     #DB1010;
+  --colorDetalle:    #655B5B;
+  --fuentePrincipal: 'Metal Mania', cursive;
+  --fuenteSecundaria:   'Crimson Pro', serif;
+
+  --header-h:    64px;
+  --transition:  0.3s ease;
+}
+
+/* ── Reset base ─────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--colorPrimario);
+  color: var(--colorSecundario);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  padding: 1rem 2rem;
+  margin: auto;
+  background-color: rgba(101, 91, 91, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+span, h1 {
+  font-family: var(--fuentePrincipal);
+}
+
+a, p {
+  font-family: var(--fuenteSecundaria);
+  text-decoration: none;
+}
+/* main */
+.site-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+.hero {
+  font-size: 7rem;
+}
+/* reproductor */
+.player {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 2rem;
+  backdrop-filter: blur(10px);
+  background: var(--colorPrimario);
+  border-top: 1px solid rgba(101, 91, 91, 0.3);
+
+}
+
+.bandcamp-player {
+  width: 350px;
+  height: 350px;
+  border: none;
+  border-radius: 8px;
+}
+/* footer */
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 3rem 2rem;
+  border-top: 1px solid rgba(101, 91, 91, 0.3);
+}
+
+.social-links ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.social-links a {
+  color: var(--colorSecundario);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--colorDetalle);
+}
+
+.footer-dev {
+  color: var(--colorSecundario);
+  font-size: 0.75rem;
+}
+
+.footer-dev a {
+  color: var(--colorAcento);
+  text-decoration: none;
+}
+.social-icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--colorSecundario);
+  display: block;
+  transition: fill 0.3s ease;
+}
+
+.social-links a:hover .social-icon {
+  fill: var(--colorAcento);
+}
+
+.social-links li {
+  display: flex;
+  align-items: center;
+}
