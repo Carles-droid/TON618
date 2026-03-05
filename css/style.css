@@ -131,7 +131,7 @@ a, p {
   z-index: 2;
   filter: drop-shadow(0 0 15px rgba(0,0,0,0.8));
   /* Animación de masa gravitatoria */
-  animation: massPulse 10s infinite ease-in-out;
+  animation: massPulse 8s infinite ease-in-out;
 }
 
 .tagline {
@@ -149,7 +149,7 @@ a, p {
 
 @keyframes massPulse {
   0%, 100% { transform: scale(1); filter: brightness(1); }
-  50% { transform: scale(0.98); filter: brightness(0.7); }
+  50% { transform: scale(0.97); filter: brightness(0.25); }
 }
 
 /* reproductor */
