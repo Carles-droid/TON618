@@ -1,9 +1,9 @@
 /* ── Variables ──────────────────────────────────────────────── */
 :root {
-  --colorPrimario:   #0A0A0A;
-  --colorSecundario: #D2C2C2;
-  --colorAcento:     #DB1010;
-  --colorDetalle:    #655B5B;
+  --colorPrimario:   #020202; /* Negro más profundo */
+  --colorSecundario: #E0D7D7; /* Blanco ceniza */
+  --colorAcento:     #FF0000; /* Rojo puro/sangre */
+  --colorDetalle:    #403A3A; /* Gris industrial */
   --fuentePrincipal: 'Metal Mania', cursive;
   --fuenteSecundaria:   'Crimson Pro', serif;
 
@@ -29,47 +29,129 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
-
+/* header */
+/* ── Site Header Refinado ─────────────────────────────────── */
 .site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
+  position: fixed; /* Cambiado de sticky a fixed para mejor control sobre el hero */
   top: 0;
-  padding: 1rem 2rem;
-  margin: auto;
-  background-color: rgba(101, 91, 91, 0.5);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  left: 0;
+  width: 100%;
+  height: var(--header-h);
+  padding: 0 4rem;
+  z-index: 1000;
+  background-color: rgba(10, 10, 10, 0.7); /* Negro traslúcido */
+  backdrop-filter: blur(12px) saturate(150%);
+  border-bottom: 1px solid rgba(210, 194, 194, 0.05); /* Línea casi invisible */
+  transition: var(--transition);
 }
 
+/* El nombre pequeño en el header (Logotipo) */
+.band-name {
+  font-family: var(--fuentePrincipal);
+  font-size: 1.8rem;
+  font-weight: normal;
+  color: var(--colorSecundario);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* ── Navbar ──────────────────────────────────────────────── */
 .navbar ul {
   display: flex;
   list-style: none;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
+  gap: 3rem; /* Más espacio entre links para aire "espacial" */
+}
+
+.navbar a {
+  font-family: var(--fuenteSecundaria);
+  font-weight: 300;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: var(--colorSecundario);
+  transition: var(--transition);
+  position: relative;
+}
+
+/* Efecto Hover: La radiación del agujero negro */
+.navbar a:hover {
+  color: var(--colorAcento);
+}
+
+/* Línea sutil decorativa en el hover */
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--colorAcento);
+  transition: var(--transition);
+}
+
+.navbar a:hover::after {
+  width: 100%;
 }
 
 span, h1 {
   font-family: var(--fuentePrincipal);
+  font-weight: normal;
 }
 
 a, p {
   font-family: var(--fuenteSecundaria);
   text-decoration: none;
+  color: var(--colorPrimario);
 }
 /* main */
 .site-main {
+  position: relative;
+  min-height: 70vh;
+  font-weight: normal;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
-  gap: 2rem;
+  justify-content: center;
+  /* Efecto de horizonte de sucesos en el fondo */
+  background: radial-gradient(circle at center, 
+              rgba(219, 16, 16, 0.05) 0%, 
+              var(--colorPrimario) 70%);
+  overflow: hidden;
 }
-.hero {
-  font-size: 7rem;
+
+.hero h1 {
+  font-size: clamp(6rem, 25vw, 15rem);
+  color: var(--colorSecundario);
+  letter-spacing: -0.05em;
+  z-index: 2;
+  filter: drop-shadow(0 0 15px rgba(0,0,0,0.8));
+  /* Animación de masa gravitatoria */
+  animation: massPulse 10s infinite ease-in-out;
 }
+
+.tagline {
+  margin-top: -2rem; /* Acerca el texto al centro de gravedad del H1 */
+  z-index: 3;
+}
+
+.tagline-text {
+  font-weight: 200;
+  color: var(--colorAcento);
+  letter-spacing: 0.8rem;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  position: relative;
+}
+
+@keyframes massPulse {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(0.98); filter: brightness(0.7); }
+}
+
 /* reproductor */
 .player {
   display: flex;
@@ -93,7 +175,7 @@ a, p {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  padding: 3rem 2rem;
+  padding: 2rem 2rem;
   border-top: 1px solid rgba(101, 91, 91, 0.3);
 }
 
