@@ -255,7 +255,7 @@ a, p {
     flex-direction: column;
     justify-content: center; /* Centrado vertical principal */
     align-items: center;
-    min-height: calc(65vh - 80px); /* Restamos la altura del header para un centro real */
+    min-height: calc(55vh - 65px); /* Restamos la altura del header para un centro real */
     margin-top: 80px; /* La altura exacta de tu header en móvil */
   }
 
@@ -279,15 +279,18 @@ a, p {
   /* 3. Player: Adaptación de ancho */
   .player {
     padding: 2rem 1rem;
+    /* min-height: 80vh; */
   }
 
   .bandcamp-player {
-    height: 150px; /* Un poco más alto en móvil para que los botones sean usables */
+   max-height: fit-content; 
   }
 
   /* 4. Footer: Iconos más grandes para dedos */
   .site-footer {
     padding: 2rem 1rem;
+    line-height: 1.5;
+    gap: .5rem;
   }
 
   .social-links ul {
