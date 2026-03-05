@@ -158,14 +158,15 @@ a, p {
   justify-content: center;
   padding: 3rem 2rem;
   backdrop-filter: blur(10px);
-  background: var(--colorPrimario);
-  border-top: 1px solid rgba(101, 91, 91, 0.3);
+  width: 100%;
+  max-width: 700px; /* Un ancho máximo elegante para desktop */
+  margin: 0 auto;
 
 }
 
 .bandcamp-player {
   width: 350px;
-  height: 350px;
+  height: 654px;
   border: none;
   border-radius: 8px;
 }
@@ -283,7 +284,9 @@ a, p {
   }
 
   .bandcamp-player {
-   max-height: fit-content; 
+    /* max-height: fit-content;  */
+    /* height: 100vw; */
+    height: 650px;
   }
 
   /* 4. Footer: Iconos más grandes para dedos */
